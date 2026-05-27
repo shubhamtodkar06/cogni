@@ -65,7 +65,7 @@ def describe(data, output_path=None):
     return result
     
     
-def discrete_var_barplot(x, y, data, output_path=None, w, h):
+def discrete_var_barplot(x, y, data, output_path=None, w = 20, h = 15):
     """draw the barplot of a discrete variable x against y(target variable). 
     By default the bar shows the mean value of y.
     """
@@ -77,7 +77,7 @@ def discrete_var_barplot(x, y, data, output_path=None, w, h):
         print('Image saved at', str(output))
     
     
-def discrete_var_countplot(x, data, output_path=None, w, h):
+def discrete_var_countplot(x, data, output_path=None, w = 20, h = 15):
     """draw the countplot of a discrete variable x."""    
     plt.figure(figsize=(w, h))
     sns.countplot(x=x, data=data)
@@ -87,7 +87,7 @@ def discrete_var_countplot(x, data, output_path=None, w, h):
         print('Image saved at', str(output))
 
 
-def discrete_var_boxplot(x, y, data, output_path=None, w, h):
+def discrete_var_boxplot(x, y, data, output_path=None,w = 20, h = 15):
     """draw the boxplot of a discrete variable x against y."""    
     plt.figure(figsize=(w, h))
     sns.boxplot(x=x, y=y, data=data)
@@ -97,7 +97,7 @@ def discrete_var_boxplot(x, y, data, output_path=None, w, h):
         print('Image saved at', str(output))
 
 
-def continuous_var_distplot(x, output_path=None, bins=None, w, h):
+def continuous_var_distplot(x, output_path=None, bins=None, w = 20, h = 15):
     """draw the distplot of a continuous variable x."""    
     plt.figure(figsize=(w, h))
     # Replaced deprecated distplot with equivalent histplot
@@ -110,7 +110,7 @@ def continuous_var_distplot(x, output_path=None, bins=None, w, h):
     
 # 2018.11.28 Created by Eamon.Zhang 
 
-def scatter_plot(x, y, data, output_path=None, w, h):
+def scatter_plot(x, y, data, output_path=None, w = 20, h = 15):
     """draw the scatter-plot of two variables."""    
     plt.figure(figsize=(w, h))
     sns.scatterplot(x=x, y=y, data=data)
