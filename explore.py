@@ -65,11 +65,11 @@ def describe(data, output_path=None):
     return result
     
     
-def discrete_var_barplot(x, y, data, output_path=None):
+def discrete_var_barplot(x, y, data, output_path=None, w, h):
     """draw the barplot of a discrete variable x against y(target variable). 
     By default the bar shows the mean value of y.
     """
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(w, h))
     sns.barplot(x=x, y=y, data=data)
     if output_path is not None:
         output = os.path.join(output_path, 'Barplot_' + str(x) + '_' + str(y) + '.png')
@@ -77,9 +77,9 @@ def discrete_var_barplot(x, y, data, output_path=None):
         print('Image saved at', str(output))
     
     
-def discrete_var_countplot(x, data, output_path=None):
+def discrete_var_countplot(x, data, output_path=None, w, h):
     """draw the countplot of a discrete variable x."""    
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(w, h))
     sns.countplot(x=x, data=data)
     if output_path is not None:
         output = os.path.join(output_path, 'Countplot_' + str(x) + '.png')
@@ -87,9 +87,9 @@ def discrete_var_countplot(x, data, output_path=None):
         print('Image saved at', str(output))
 
 
-def discrete_var_boxplot(x, y, data, output_path=None):
+def discrete_var_boxplot(x, y, data, output_path=None, w, h):
     """draw the boxplot of a discrete variable x against y."""    
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(w, h))
     sns.boxplot(x=x, y=y, data=data)
     if output_path is not None:
         output = os.path.join(output_path, 'Boxplot_' + str(x) + '_' + str(y) + '.png')
@@ -97,9 +97,9 @@ def discrete_var_boxplot(x, y, data, output_path=None):
         print('Image saved at', str(output))
 
 
-def continuous_var_distplot(x, output_path=None, bins=None):
+def continuous_var_distplot(x, output_path=None, bins=None, w, h):
     """draw the distplot of a continuous variable x."""    
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(w, h))
     # Replaced deprecated distplot with equivalent histplot
     sns.histplot(x=x, kde=False, bins=bins)
     if output_path is not None:
@@ -110,9 +110,9 @@ def continuous_var_distplot(x, output_path=None, bins=None):
     
 # 2018.11.28 Created by Eamon.Zhang 
 
-def scatter_plot(x, y, data, output_path=None):
+def scatter_plot(x, y, data, output_path=None, w, h):
     """draw the scatter-plot of two variables."""    
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(w, h))
     sns.scatterplot(x=x, y=y, data=data)
     if output_path is not None:
         output = os.path.join(output_path, 'Scatter_plot_' + str(x.name) + '_' + str(y.name) + '.png')
