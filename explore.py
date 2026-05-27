@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import os
-plt.style.use('seaborn-colorblind')
+
 
 # 2018.11.07 Created by Eamon.Zhang
 
